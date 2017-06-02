@@ -14,16 +14,24 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "bootstrap": "^3.3.7",
+    "css-loader": "^0.28.4",
+    "file-loader": "^0.11.1",
+    "node-sass": "^4.5.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.5",
     "react-router": "^4.1.1",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.6.1"
   },
   "scripts": {
-    "start:dev": "webpack -w & zat server",
-    "validate": "webpack -p &&  zat validate",
+    "webpack": "./node_modules/webpack/bin/webpack.js",
+    "start:dev": "npm run webpack -- -w & zat server",
+    "validate": "npm run webpack -- -p &&  zat validate",
     "build": "npm run validate && rm -rf node_modules && zat package && npm install"
   }
 }
