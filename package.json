@@ -30,8 +30,8 @@
   },
   "scripts": {
     "webpack": "./node_modules/webpack/bin/webpack.js",
-    "start:dev": "npm run webpack -- -w & zat server",
-    "validate": "npm run webpack -- -p &&  zat validate",
-    "build": "npm run validate && rm -rf node_modules && zat package && npm install"
+    "start:dev": "npm run webpack -- -w & zat server -p ./build",
+    "validate": "npm run webpack -- -p &&  zat validate -p ./build",
+    "build": "npm run validate && rm -rf node_modules && zat package -p ./build && npm install"
   }
 }
