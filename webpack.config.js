@@ -5,7 +5,7 @@ module.exports = {
     './index.js'
   ],
   output: {
-    path: path.join(__dirname, 'assets'),
+    path: path.join(__dirname, 'build', 'assets'),
     filename: 'bundle.js'
   },
   devtool: 'source-map',
