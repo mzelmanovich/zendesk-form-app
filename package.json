@@ -20,5 +20,10 @@
     "react-router": "^4.1.1",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "start:dev": "webpack -w & zat server",
+    "validate": "webpack -p &&  zat validate",
+    "build": "npm run validate && rm -rf node_modules && zat package && npm install"
   }
 }
