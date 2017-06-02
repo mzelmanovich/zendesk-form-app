@@ -1,4 +1,5 @@
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: [
@@ -20,11 +21,17 @@ module.exports = {
     },
     {
       test: /\.scss$/,
-      loaders: ['style-loader', 'css-loader', 'sass-loader']
+      loader: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader'
+      })
     },
     { test: /\.(png|woff|woff2|eot|ttf|svg)$/,
       loader: 'url-loader?limit=100000' }]
   },
+  plugins: [
+    new ExtractTextPlugin('styles.css'),
+  ],
   resolve: {
     extensions: ['.js', '.jsx', '.css', '.scss'],
   }
